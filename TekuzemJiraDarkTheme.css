@@ -1,13 +1,16 @@
 // ==UserScript==
-// @name         Jira
+// @name         Jira Dark Theme
+// @name:tr      Jira Karanlık Tema    
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  try to take over the world!
-// @author       You
+// @description  Dark theme for Tekuzem Jira
+// @description:tr Tekuzem Jira için Karanlık Tema
+// @author       @mbrkg
 // @match        https://tekuzemjira.atlassian.net
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=atlassian.net
 // @grant GM_addStyle
 // @run-at document-start
+// @license MIT
 // @include https://tekuzemjira.atlassian.*
 // ==/UserScript==
 
