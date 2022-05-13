@@ -1,0 +1,54 @@
+// ==UserScript==
+// @name         Jira
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        https://tekuzemjira.atlassian.net
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=atlassian.net
+// @grant GM_addStyle
+// @run-at document-start
+// @include https://tekuzemjira.atlassian.*
+// ==/UserScript==
+
+(function() {
+    let css = `
+             .css-x2amap [data-item-title],.cPcfCB, .elro8wh1 > .css-19r5em7,.elro8wh1 >.css-pxzk9z{
+                 color:rgb(0, 82, 204)!important
+             }
+             .cjZbxy,.cIxQSn,.kGyTYA,.jtGrUk,.jazsrX,.cYbDZy,.hEjlRQ,.dSnkhZ,.kInYpb,.cXDhWR,.jDsHJp,.gCpaVR,.gnawqP,.ldHegS,.dtkeQs,.gcYReK,.eRhBUv,.kMFkBA,.eCSunE,.gRcCsj,.jzKtnn,.iETRNE,.skNbo,.kSNbSf,.css-1yfnrso,.eVxQWi,.itrVMR,.mEYYF,.bmZWJP,.eANdKV,.eegaum,.llCsQv:hover,.lnnurR,.kZKcTI,.kCUjSv,.peoCQ,.iVPMoh,.ifBtm,.faIStJ,.cXAjwm,.ReactVirtualized__Grid__innerScrollContainer,.Umxqe,.css-4yyy9t,.css-pdqff4,.fXTYkh,.css-mvqjze,.fhbDMz,#ak-main-content,.sc-1sx0918-0,.eMkmmp{
+                 background: black!important;
+             }
+             .css-g3syo4,.iAyZfO,.jOeMhC,.kDqCAx,.kuqLWx,.iKmxyr,.gfZYuW .ProseMirror p,.llCsQv,.guPazB,.eeoVFm,.css-1ncnk3i,.cCeaQV,.ciVUvn,.css-1we84oz,.css-1we84oz,.jRGpHq,.hVPkqc,.css-4yyy9t,.css-4yyy9t::after,.css-5mekwu,.css-a5cp5n,#ak-main-content,.gGIiAL,.eNQhgw,.dwYBpi p,.gjCDIs,.css-skcor1,.dqHXQe{
+                 color: #bec9d3!important;
+             }
+             .bAArMz{
+                 background: #3a0d02!important;
+             }
+             .fdIoGt{
+                 background: #10131a!important;
+             }
+             .iHzmoo,.hSGdCs,.ctVZgK:hover,.hiNqTQ{
+                 background-color: #041328!important;
+                 color: #bec9d3!important;
+             }
+             .fhbDMz,.gRcCsj,.hSGdCs{
+                 border-radius:unset!important;
+             }
+             .eegaum{
+                 box-shadow:unset!important;
+             }
+             .dSnkhZ{
+                 border: solid 1px;
+             }
+             `;
+    
+    if (typeof GM_addStyle !== "undefined") {
+        GM_addStyle(css);
+    }
+    else {
+        let styleNode = document.createElement("style");
+        styleNode.appendChild(document.createTextNode(css));
+        (document.querySelector("head") || document.documentElement).appendChild(styleNode);
+    }
+})();
